@@ -1,0 +1,6 @@
+*.[od]
+sip_app
+tags
+cscope*
+*~
+*.sh

@@ -1,0 +1,21 @@
+试验箱相关代码说明
+
+该文件夹下的dev是试验箱远程通信的使用的代码
+sip文件可以通用但是需要编译相关的库/opt/jthread_xx/lib下
+连个文件夹需要修改的内容是makefile中的交叉编译器以及dev中的pwd编译所在目录
+
+dev_app 1 内容是去除主函数中的while（1）死循环，添加等待socket-listen线程等待结束函数
+	添加两个全局变量记录当前位置和上一次的位置
+
+dev_app 2 完成了 cd cat ping命令功能测试，history需要创建一个文件专门用于保存通过system 
+	popen执行过的代码，要追加的方式添加到记录文件当中。因此history只完成了一小部分，
+	还需要完成创建文件读取文件的功能
+	新学到的命令
+	ps -ef|grep \"ping 192.168.1.110\"|grep -v \"grep\"|awk '{print $1}'获取指定进程的pid号
+	history n 显示最近n条命令记录
+	学到的注意点：
+		system，popen执行的命令没有记忆，都会随着子进程的结束而消失，因此无法直接
+		执行cd -  history这种带记忆的命令
+	对于ping命令无法访问到的ip会出现fgets阻塞的问题，通过结束子进程打破fgets的阻塞实现ping
+	命令ping不存在的ip
+	

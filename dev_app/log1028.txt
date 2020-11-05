@@ -1,0 +1,8 @@
+PING 192.168.1.136 (192.168.1.136) 56(84) bytes of data.
+From 192.168.1.135 icmp_seq=1 Destination Host Unreachable
+From 192.168.1.135 icmp_seq=2 Destination Host Unreachable
+From 192.168.1.135 icmp_seq=3 Destination Host Unreachable
+
+--- 192.168.1.136 ping statistics ---
+5 packets transmitted, 0 received, +3 errors, 100% packet loss, time 4024ms
+pipe 3
